@@ -1,3 +1,4 @@
+import { Etheme } from './../../enums/etheme';
 import { Component } from '@angular/core';
 import {
   IconDefinition,
@@ -14,15 +15,19 @@ export class HeaderComponent {
   themeIcon: IconDefinition;
 
   constructor() {
-    this.themeText = 'Escuro';
+    this.themeText = Etheme.THEME_TEXT_DARK;
     this.themeIcon = faMoon;
   }
 
   changeTheme() {
-    if (this.themeText == 'Escuro') {
-      this.themeText = 'Claro';
+    const isDark = document.body.classList.toggle('dark-theme');
+
+    if (isDark) {
+      this.themeText = Etheme.THEME_TEXT_LIGTH;
+      this.themeIcon = faSun;
     } else {
-      this.themeText = 'Escuro';
+      this.themeText = Etheme.THEME_TEXT_DARK;
+      this.themeIcon = faMoon;
     }
   }
 }
