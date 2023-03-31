@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  font-family: "Share Tech Mono", monospace;
+
+  button {
+    cursor: pointer;
+  }
+}
+
+:root {
+  --bg-secondary: #f2aa52;
+  --body: #faf1ea;
+  --text-menu: #89e0ec;
+  --text-body: #733f2d;
+  --details: #ff2d0e;
+}
+
+:root .dark-theme {
+  --bg-secondary: #f25757;
+  --body: #110a40;
+  --text-menu: #f2506e;
+  --text-body: #f2cc0c;
+  --details: #f27f3d;
+}
+
+body {
+  background-color: var(--body);
+  app-root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    main {
+      width: 96vw;
+      height: 90vh;
+    }
+  }
+}

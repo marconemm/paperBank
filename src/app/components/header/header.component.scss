@@ -1,0 +1,39 @@
+:host {
+  header {
+    width: 96vw;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto;
+
+    &,
+    ul {
+      &,
+      li {
+        height: 5vh;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    ul {
+      li {
+        margin-left: 1rem;
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    label {
+      width: 10vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      button {
+        background: none;
+        margin-right: 0.6vw;
+      }
+    }
+  }
+}
