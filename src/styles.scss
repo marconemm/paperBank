@@ -14,23 +14,23 @@
 }
 
 :root {
-  --bg-secondary: #f2aa52;
-  --body: #faf1ea;
-  --text-menu: #89e0ec;
-  --text-body: #733f2d;
-  --details: #ff2d0e;
+  --bg-menu: #f2aa52;
+  --bg-body: #faf1ea;
+  --texts: #733f2d;
+  --details_1: #ff2d0e;
+  --details_2: #89e0ec;
 }
 
 :root .dark-theme {
-  --bg-secondary: #f25757;
-  --body: #110a40;
-  --text-menu: #f2506e;
-  --text-body: #f2cc0c;
-  --details: #f27f3d;
+  --bg-menu: #67346b;
+  --bg-body: #110a40;
+  --texts: #f2506e;
+  --details_1: #fbf8f7;
+  --details_2: #f2cc0c;
 }
 
 body {
-  background-color: var(--body);
+  background-color: var(--bg-body);
   app-root {
     width: 100vw;
     height: 100vh;
@@ -38,6 +38,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    color: var(--texts);
     main {
       width: 96vw;
       height: 90vh;

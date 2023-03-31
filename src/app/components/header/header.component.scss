@@ -4,6 +4,9 @@
     justify-content: space-between;
     list-style: none;
     margin: auto;
+    background-color: var(--bg-menu);
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
 
     &,
     ul {
@@ -18,21 +21,28 @@
     ul {
       li {
         margin-left: 1rem;
-        &:nth-child(1) {
-          margin-left: 0;
+        &,
+        a {
+          color: var(--texts);
         }
       }
     }
 
     label {
+      height: 5vh;
       width: 10vw;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
+      color: var(--details_1);
 
       button {
         background: none;
         margin-right: 0.6vw;
+        color: var(--texts);
+        fa-icon {
+          color: var(--details_2);
+        }
       }
     }
   }
