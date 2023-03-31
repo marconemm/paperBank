@@ -1,0 +1,20 @@
+<main>
+  <h1>Extratos</h1>
+  <h2>Não Banco - Escola Jeri</h2>
+  <section>
+    <h3>Cartão: {{ card.id }}</h3>
+    <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
+    <p>Saldo em BTC: {{ card.balance_sat }} BTC</p>
+    <p>Saldo em R$: {{ card.balance_sat }}</p>
+  </section>
+  <section>
+    <h3>Preco do Bitcoin</h3>
+    <p>1 BTC = R$ {{ card.prices.btc_brl }}</p>
+    <p>1 sat = R$ {{ card.prices.sat_brl }}</p>
+  </section>
+  <section>
+    <p>
+      Data e hora da consulta: <span>{{ card.prices.time }}</span>
+    </p>
+  </section>
+</main>

@@ -1,0 +1,13 @@
+<header>
+  <ul>
+    <li><a [routerLink]="['']">Pagina inical</a></li>
+    <li><a [routerLink]="['extratos']">Extratos</a></li>
+  </ul>
+  <label for="themeSelector">
+    Modo:
+    <button id="themeSelector" type="button" (click)="changeTheme()">
+      {{ themeText }}
+      <fa-icon [icon]="themeIcon"></fa-icon>
+    </button>
+  </label>
+</header>
