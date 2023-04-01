@@ -1,38 +1,34 @@
-import { Component } from '@angular/core';
-
-interface Price {
-  btc_brl: number;
-  sat_brl: number;
-  time: string;
-}
-
-interface Card {
-  id: string;
-  balance_sat: number;
-  balance_btc: number;
-  balance_brl: number;
-  prices: Price;
-}
+import { Component, OnInit } from '@angular/core';
+import { CoingeckoService } from 'src/app/services/coingecko.service';
+import { Card } from '../../interfaces/balances';
 
 @Component({
   selector: 'app-balances',
   templateUrl: './balances.component.html',
   styleUrls: ['./balances.component.scss'],
 })
-export class BalancesComponent {
+export class BalancesComponent implements OnInit {
   card: Card;
 
-  constructor() {
+  constructor(private coingecko: CoingeckoService) {
     this.card = {
       id: '042072D2E47580',
       balance_sat: 16620,
       balance_btc: 0.0001662,
       balance_brl: 18.93,
       prices: {
-        btc_brl: 113870.86,
-        sat_brl: 0.00113871,
-        time: '03032023T231800Z',
+        btc_brl: 0,
+        sat_brl: 0,
+        time: '',
       },
     };
+  }
+
+  ngOnInit(): void {
+    debugger;
+    this.card.prices.btc_brl = 113870.86;
+    this.card.prices.sat_brl = this.card.prices.btc_brl / 100000000;
+    this.card.prices.time = '2011-10-05T14:48:00.000Z';
+    this.coingecko.getBTC_BRL().then((response) => console.log(response));
   }
 }
