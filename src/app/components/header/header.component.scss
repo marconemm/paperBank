@@ -30,10 +30,11 @@
 
     label {
       height: 5vh;
-      width: 10vw;
+      width: 5vw;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
       color: var(--details_1);
 
       button {

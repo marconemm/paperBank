@@ -22,11 +22,11 @@
 }
 
 :root .dark-theme {
-  --bg-menu: #67346b;
-  --bg-body: #110a40;
-  --texts: #f2506e;
-  --details_1: #fbf8f7;
-  --details_2: #f2cc0c;
+  --bg-menu: #564663;
+  --bg-body: #12103b;
+  --texts: #ed3d54;
+  --details_1: #edf3e7;
+  --details_2: #edaf27;
 }
 
 body {
@@ -39,9 +39,35 @@ body {
     justify-content: space-between;
     align-items: center;
     color: var(--texts);
+
     main {
       width: 96vw;
       height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      h1 {
+        margin-top: 3vh;
+      }
+
+      h2 {
+        margin-top: 1vh;
+      }
+
+      h3 {
+        margin: 2vh 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        background-color: var(--bg-menu);
+        color: var(--texts);
+        padding: 1vh 1vw;
+        border-radius: 0.5rem;
+      }
     }
   }
 }

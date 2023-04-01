@@ -1,22 +1,21 @@
-:host {
-  footer {
-    blockquote {
-      width: 96vw;
-      height: 5vh;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 5px;
+footer {
+  blockquote {
+    width: 96vw;
+    height: 5vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--details_2);
 
-      p {
-        &::before {
-          content: "\201C";
-        }
+    p {
+      &::before {
+        content: "\201C";
+      }
 
-        &::after {
-          content: "\201D";
-        }
+      &::after {
+        content: "\201D";
       }
     }
   }
