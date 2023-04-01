@@ -1,10 +1,12 @@
 <main>
-  <h1>Extratos</h1>
-  <h2>Não Banco - Escola Jeri</h2>
+  <h1>Não Banco - Escola Jeri</h1>
+  <h2>Extratos</h2>
   <section>
-    <h3>Cartão: {{ card.id }}</h3>
+    <h3>
+      Cartão: <span id="card">{{ card.id }}</span>
+    </h3>
     <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
-    <p>Saldo em BTC: {{ card.balance_sat }} BTC</p>
+    <p>Saldo em BTC: {{ card.balance_btc }} BTC</p>
     <p>Saldo em R$: {{ card.balance_sat }}</p>
   </section>
   <section>
@@ -13,8 +15,8 @@
     <p>1 sat = R$ {{ card.prices.sat_brl }}</p>
   </section>
   <section>
-    <p>
-      Data e hora da consulta: <span>{{ card.prices.time }}</span>
+    <p id="dateTime">
+      Consulta realizada em <span>{{ card.prices.time | dateTimePT_BR }}.</span>
     </p>
   </section>
 </main>

@@ -2,12 +2,13 @@
   <ul>
     <li><a [routerLink]="['']">Pagina inical</a></li>
     <li><a [routerLink]="['extratos']">Extratos</a></li>
+    <li><a [routerLink]="['contato']">Contate-nos</a></li>
   </ul>
   <label for="themeSelector">
     Modo:
     <button id="themeSelector" type="button" (click)="changeTheme()">
       {{ themeText }}
-      <fa-icon [icon]="themeIcon"></fa-icon>
+      <fa-icon [icon]="themeIcon" (click)="changeTheme()"></fa-icon>
     </button>
   </label>
 </header>
