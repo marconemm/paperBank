@@ -11,9 +11,17 @@
   </div>
   <menu>
     <ul>
-      <li><a [routerLink]="['']">Pagina inical</a></li>
-      <li><a [routerLink]="['extratos']">Extratos</a></li>
-      <li><a [routerLink]="['contato']">Contate-nos</a></li>
+      <li>
+        <a class="active" (click)="activate($event)" [routerLink]="['']"
+          >Pagina inical</a
+        >
+      </li>
+      <li>
+        <a (click)="activate($event)" [routerLink]="['extratos']">Extratos</a>
+      </li>
+      <li>
+        <a (click)="activate($event)" [routerLink]="['contato']">Contate-nos</a>
+      </li>
     </ul>
   </menu>
 </header>

@@ -13,6 +13,7 @@
       label {
         color: var(--details_1);
         button {
+          font-size: 1em;
           background: none;
           margin-right: 0.6vw;
           color: var(--texts);
@@ -38,8 +39,8 @@
       padding: 1vh 5vw 1vh 4vw;
       float: right;
       position: relative;
-      right: -40vw;
-      transition: right 0.3s;
+      right: -45vw;
+      transition: right 250ms;
       z-index: 1;
       border: 0.3rem groove var(--details_1);
 
@@ -48,8 +49,62 @@
         flex-direction: column;
         align-items: center;
         margin: 1vh 0;
+
         a {
           color: var(--texts);
+          text-decoration: none;
+          padding: 2vw;
+        }
+
+        a.active {
+          background-color: var(--details_2);
+          border-radius: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+// Media queries:
+
+@media screen and (min-width: 768px) {
+  :host {
+    header {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      div {
+        #menuIcon {
+          display: none;
+        }
+      }
+
+      menu {
+        position: unset;
+        float: unset;
+        border: unset;
+        width: 100%;
+        height: 5vw;
+        padding: 1vh 2vw;
+        margin-top: 1vh;
+        border-radius: 0.7rem;
+        display: flex;
+        align-items: center;
+
+        li {
+          display: unset;
+
+          a {
+            padding: 1vw;
+          }
+
+          a:hover {
+            color: var(--details_2);
+            background-color: var(--details_1);
+            border-radius: 0.6rem;
+          }
         }
       }
     }

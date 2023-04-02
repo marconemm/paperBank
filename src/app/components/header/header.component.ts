@@ -33,6 +33,17 @@ export class HeaderComponent {
     }
   }
 
+  activate(event: MouseEvent) {
+    const aElList = document.querySelectorAll('menu > ul > li > a');
+    const target = <HTMLElement>event.target;
+
+    aElList.forEach((el) => {
+      el.removeAttribute('class');
+    });
+
+    target.classList.add('active');
+  }
+
   changeTheme() {
     const isDark = document.body.classList.toggle('dark-theme');
 
