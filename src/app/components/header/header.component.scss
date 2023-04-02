@@ -1,48 +1,55 @@
 :host {
   header {
-    width: 96vw;
-    justify-content: space-between;
-    list-style: none;
-    margin: auto;
-    background-color: var(--bg-menu);
-    border-bottom-left-radius: 0.7rem;
-    border-bottom-right-radius: 0.7rem;
+    overflow: hidden;
+    div {
+      justify-content: space-between;
 
-    &,
-    ul {
       &,
-      li {
-        height: 5vh;
+      label {
         display: flex;
         align-items: center;
       }
-    }
 
-    ul {
-      li {
-        margin-left: 1rem;
-        &,
-        a {
+      label {
+        color: var(--details_1);
+        button {
+          background: none;
+          margin-right: 0.6vw;
           color: var(--texts);
+          fa-icon {
+            color: var(--details_2);
+          }
         }
+      }
+
+      #menuIcon {
+        display: block;
+        text-align: right;
+        font-size: 1.5em;
       }
     }
 
-    label {
-      height: 5vh;
-      width: 5vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      color: var(--details_1);
+    width: 94vw;
+    margin: 3vh auto 0;
+    menu {
+      background-color: var(--bg-menu);
+      border-top-left-radius: 0.6rem;
+      border-bottom-left-radius: 0.6rem;
+      padding: 1vh 5vw 1vh 4vw;
+      float: right;
+      position: relative;
+      right: -40vw;
+      transition: right 0.3s;
+      z-index: 1;
+      border: 0.3rem groove var(--details_1);
 
-      button {
-        background: none;
-        margin-right: 0.6vw;
-        color: var(--texts);
-        fa-icon {
-          color: var(--details_2);
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1vh 0;
+        a {
+          color: var(--texts);
         }
       }
     }

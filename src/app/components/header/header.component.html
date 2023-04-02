@@ -1,14 +1,19 @@
 <header>
-  <ul>
-    <li><a [routerLink]="['']">Pagina inical</a></li>
-    <li><a [routerLink]="['extratos']">Extratos</a></li>
-    <li><a [routerLink]="['contato']">Contate-nos</a></li>
-  </ul>
-  <label for="themeSelector">
-    Modo:
-    <button id="themeSelector" type="button" (click)="changeTheme()">
-      {{ themeText }}
-      <fa-icon [icon]="themeIcon" (click)="changeTheme()"></fa-icon>
-    </button>
-  </label>
+  <div>
+    <label for="themeSelector">
+      Modo:
+      <button id="themeSelector" type="button" (click)="changeTheme()">
+        {{ themeText }}
+        <fa-icon [icon]="themeIcon" (click)="changeTheme()"></fa-icon>
+      </button>
+    </label>
+    <fa-icon id="menuIcon" [icon]="menuIcon" (click)="openMenu()"></fa-icon>
+  </div>
+  <menu>
+    <ul>
+      <li><a [routerLink]="['']">Pagina inical</a></li>
+      <li><a [routerLink]="['extratos']">Extratos</a></li>
+      <li><a [routerLink]="['contato']">Contate-nos</a></li>
+    </ul>
+  </menu>
 </header>
