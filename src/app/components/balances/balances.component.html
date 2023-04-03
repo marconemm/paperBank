@@ -7,12 +7,12 @@
     </h3>
     <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
     <p>Saldo em BTC: {{ card.balance_btc }} BTC</p>
-    <p>Saldo em R$: {{ card.balance_brl }}</p>
+    <p>Saldo em R$: {{ card.balance_brl | decimals : 2 }}</p>
   </section>
   <section>
     <h3>Preço do Bitcoin</h3>
-    <p>1 BTC = R$ {{ card.prices.btc_brl }}</p>
-    <p>1 sat = R$ {{ card.prices.sat_brl }}</p>
+    <p>1 BTC = R$ {{ card.prices.btc_brl | decimals : 2 }}</p>
+    <p>1 sat = R$ {{ card.prices.sat_brl | decimals : 4 }}</p>
   </section>
   <section>
     <p id="dateTime">

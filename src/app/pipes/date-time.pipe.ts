@@ -6,11 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DateTimePipe implements PipeTransform {
   transform(strTimeIso: string): string {
     const dateIso: Date = new Date(strTimeIso);
-    dateIso.setUTCHours(-4);
 
-    const dateList: string[] = dateIso
-      .toLocaleString('pt-BR', { timeZone: 'UTC' })
-      .split(',');
+    const dateList: string[] = dateIso.toLocaleString('pt-BR').split(',');
 
     return `${dateList[0]}, às ${dateList[1]}`;
   }

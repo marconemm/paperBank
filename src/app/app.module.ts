@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { ContatoComponent } from './components/contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DecimalsPipe } from './pipes/decimals.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     BalancesComponent,
     DateTimePipe,
     ContatoComponent,
+    DecimalsPipe,
   ],
   imports: [
     BrowserModule,

@@ -39,13 +39,9 @@ export class BalancesComponent implements OnInit {
 
     this.coingeckoService.getBTC_BRL().subscribe((observer) => {
       this.card.prices.btc_brl = observer.bitcoin.brl;
-      this.card.prices.sat_brl = parseFloat(
-        (observer.bitcoin.brl / Constants._100M).toFixed(2)
-      );
+      this.card.prices.sat_brl = observer.bitcoin.brl / Constants._100M;
 
-      this.card.balance_brl = parseFloat(
-        (this.card.balance_sat * this.card.prices.sat_brl).toFixed(2)
-      );
+      this.card.balance_brl = this.card.balance_sat * this.card.prices.sat_brl;
     });
 
     this.card.balance_btc = this.card.balance_sat / Constants._100M;
