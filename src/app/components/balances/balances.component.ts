@@ -4,6 +4,12 @@ import { Card } from '../../interfaces/balances';
 import { Constants } from 'src/app/enums/constants';
 import { JeriSchoolService } from 'src/app/services/jeri-school.service';
 import { take } from 'rxjs';
+import {
+  IconDefinition,
+  faCreditCard,
+} from '@fortawesome/free-regular-svg-icons';
+import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
+import { faReceipt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-balances',
@@ -12,6 +18,9 @@ import { take } from 'rxjs';
 })
 export class BalancesComponent implements OnInit {
   card: Card;
+  cardIcon: IconDefinition;
+  btcIcon: IconDefinition;
+  reciptIcon: IconDefinition;
 
   constructor(
     private coingeckoService: CoingeckoService,
@@ -28,6 +37,10 @@ export class BalancesComponent implements OnInit {
         time: new Date(Date.now()).toISOString(),
       },
     };
+
+    this.cardIcon = faCreditCard;
+    this.btcIcon = faBitcoin;
+    this.reciptIcon = faReceipt;
   }
 
   ngOnInit(): void {

@@ -4,13 +4,13 @@
     font-weight: lighter;
   }
 
+  p {
+    margin: 0.6vh 0;
+  }
+
   p#dateTime {
     margin-top: 2vh;
     padding-top: 1vh;
     border-top: 2px solid var(--details_1);
-  }
-
-  p {
-    text-align: center;
   }
 }

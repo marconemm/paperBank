@@ -1,16 +1,17 @@
 <main>
   <h1>Não Banco - Escola Jeri</h1>
-  <h2>Extratos</h2>
+  <h2><fa-icon [icon]="reciptIcon"></fa-icon>Extratos</h2>
   <section>
     <h3>
-      Cartão: <span id="card">{{ card.id }}</span>
+      <fa-icon [icon]="cardIcon"></fa-icon>Cartão:
+      <span id="card">{{ card.id }}</span>
     </h3>
     <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
     <p>Saldo em BTC: {{ card.balance_btc }} BTC</p>
     <p>Saldo em R$: {{ card.balance_brl | decimals : 2 }}</p>
   </section>
   <section>
-    <h3>Preço do Bitcoin</h3>
+    <h3><fa-icon [icon]="btcIcon"></fa-icon>Preço do Bitcoin</h3>
     <p>1 BTC = R$ {{ card.prices.btc_brl | decimals : 2 }}</p>
     <p>1 sat = R$ {{ card.prices.sat_brl | decimals : 4 }}</p>
   </section>
