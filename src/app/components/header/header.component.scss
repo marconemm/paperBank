@@ -1,13 +1,17 @@
 :host {
   header {
     overflow: hidden;
+    img {
+      width: 74vw;
+      margin: 0 10vw 2vh;
+    }
     div {
       justify-content: space-between;
 
       &,
       label {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
       }
 
       label {
@@ -38,7 +42,7 @@
       border-bottom-left-radius: 0.6rem;
       padding: 1vh 5vw 1vh 4vw;
       float: right;
-      position: relative;
+      position: absolute;
       right: -45vw;
       transition: right 250ms;
       z-index: 1;
@@ -71,9 +75,14 @@
   :host {
     header {
       display: flex;
-      flex-direction: row-reverse;
+      // flex-direction: row-reverse;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      img {
+        width: unset;
+        margin: 0;
+      }
 
       div {
         #menuIcon {
