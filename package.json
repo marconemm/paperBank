@@ -1,6 +1,6 @@
 {
   "name": "paper-bank",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,6 +24,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "ng-angular-popup": "^0.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

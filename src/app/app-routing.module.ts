@@ -17,6 +17,8 @@ const routes: Routes = [
     path: 'contato',
     component: ContatoComponent,
   },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

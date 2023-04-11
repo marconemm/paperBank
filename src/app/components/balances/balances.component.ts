@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-balances',
@@ -24,7 +25,8 @@ export class BalancesComponent implements OnInit {
 
   constructor(
     private coingeckoService: CoingeckoService,
-    private jeriSchoolService: JeriSchoolService
+    private jeriSchoolService: JeriSchoolService,
+    private toaster: NgToastService
   ) {
     this.card = {
       id: '',
@@ -60,6 +62,11 @@ export class BalancesComponent implements OnInit {
 
         this.card.balance_brl =
           this.card.balance_sat * this.card.prices.sat_brl;
+        this.toaster.info({
+          detail: 'SUCESSO!',
+          summary: 'Deu boa!',
+          duration: Constants.TOAST_TIME,
+        });
       });
 
     this.card.balance_btc = this.card.balance_sat / Constants._100M;
