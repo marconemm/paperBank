@@ -12,6 +12,7 @@ import { DateTimePipe } from './pipes/date-time.pipe';
 import { ContatoComponent } from './components/contato/contato.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DecimalsPipe } from './pipes/decimals.pipe';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import { DecimalsPipe } from './pipes/decimals.pipe';
     FooterComponent,
     HomeComponent,
     BalancesComponent,
-    DateTimePipe,
     ContatoComponent,
+    DateTimePipe,
     DecimalsPipe,
   ],
   imports: [
@@ -29,8 +30,9 @@ import { DecimalsPipe } from './pipes/decimals.pipe';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    NgToastModule,
   ],
   providers: [],
-  bootstrap: [AppComponent, FontAwesomeModule],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
