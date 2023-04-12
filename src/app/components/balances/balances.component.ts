@@ -70,15 +70,14 @@ export class BalancesComponent implements OnInit {
         error: (err: HttpErrorResponse) => {
           console.error(err);
           this.toastr.error(
-            `O erro ${err.status} - "${
+            `O erro "${err.status} - ${
               err.error.error.split('.')[0]
             }" ocorreu. Por favor, tente mais tarde.`,
             'Erro:'
           );
-          // this.toastr.success('Hello world!', 'Toastr fun!');
         },
         complete: () => {
-          console.log('INFO: Coingecko fetched successfully.');
+          console.info('INFO: Coingecko fetched successfully.');
         },
       });
 
