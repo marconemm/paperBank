@@ -1,0 +1,100 @@
+.loading-container {
+  width: 100%;
+  min-height: 10vh;
+  text-align: center;
+  color: var(--texts);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--details_1);
+    bottom: 3vh;
+    left: 0;
+    border-radius: 20px;
+    animation: movingLine 2.3s infinite cubic-bezier(0.9, -0.2, 1, 1);
+  }
+}
+
+@keyframes movingLine {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  33.3%,
+  66% {
+    opacity: 0.8;
+    width: 100%;
+  }
+
+  85% {
+    width: 0;
+    left: initial;
+    right: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.loading-text {
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: flex-end;
+  span {
+    text-transform: uppercase;
+    animation: moveLetters 2.3s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: translatex(0);
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    text-shadow: 0px 2px 10px rgba(46, 74, 81, 0.3);
+  }
+}
+
+@for $i from 1 through 7 {
+  .loading-text span:nth-child(#{$i}) {
+    animation-delay: $i * 50ms;
+  }
+}
+
+@keyframes moveLetters {
+  0% {
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+
+  33.3%,
+  66.6% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(15vw);
+    opacity: 0;
+  }
+}
+
+// Medias:
+@media screen and (min-width: 768px) {
+  .loading-container {
+    width: 25vw;
+    min-width: 22vw;
+    min-height: 8vh;
+    margin: auto;
+    &:after {
+      height: 3px;
+      bottom: 2vh;
+    }
+  }
+}

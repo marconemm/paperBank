@@ -17,6 +17,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 //Pipes:
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { DecimalsPipe } from './pipes/decimals.pipe';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DecimalsPipe } from './pipes/decimals.pipe';
     ContatoComponent,
     DateTimePipe,
     DecimalsPipe,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

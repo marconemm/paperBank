@@ -25,12 +25,14 @@ export class BalancesComponent implements OnInit {
   cardIcon: IconDefinition;
   btcIcon: IconDefinition;
   reciptIcon: IconDefinition;
+  isLoading: boolean;
 
   constructor(
     private coingeckoService: CoingeckoService,
     private jeriSchoolService: JeriSchoolService,
     private toastr: ToastrService
   ) {
+    this.isLoading = true;
     this.card = {
       id: '',
       balance_sat: 0,

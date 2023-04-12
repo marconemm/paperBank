@@ -6,14 +6,20 @@
       <fa-icon [icon]="cardIcon"></fa-icon>Cartão:
       <span id="card">{{ card.id }}</span>
     </h3>
-    <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
-    <p>Saldo em BTC: {{ card.balance_btc }} BTC</p>
-    <p>Saldo em R$: {{ card.balance_brl | decimals : 2 }}</p>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="!isLoading">
+      <p>Saldo em SATs: {{ card.balance_sat }} sat</p>
+      <p>Saldo em BTC: {{ card.balance_btc }} BTC</p>
+      <p>Saldo em R$: {{ card.balance_brl | decimals : 2 }}</p>
+    </div>
   </section>
   <section>
     <h3><fa-icon [icon]="btcIcon"></fa-icon>Preço do Bitcoin</h3>
-    <p>1 BTC = R$ {{ card.prices.btc_brl | decimals : 2 }}</p>
-    <p>1 sat = R$ {{ card.prices.sat_brl | decimals : 4 }}</p>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div *ngIf="!isLoading">
+      <p>1 BTC = R$ {{ card.prices.btc_brl | decimals : 2 }}</p>
+      <p>1 sat = R$ {{ card.prices.sat_brl | decimals : 4 }}</p>
+    </div>
   </section>
   <section>
     <p id="dateTime">
