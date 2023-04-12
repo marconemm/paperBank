@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { NgToastModule } from 'ng-angular-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
+//Components:
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -12,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BalancesComponent } from './components/balances/balances.component';
 import { ContatoComponent } from './components/contato/contato.component';
 
+//Pipes:
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { DecimalsPipe } from './pipes/decimals.pipe';
 
@@ -31,7 +34,12 @@ import { DecimalsPipe } from './pipes/decimals.pipe';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    NgToastModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      closeButton: true,
+      progressBar: true,
+      timeOut: 5000,
+    }), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],
