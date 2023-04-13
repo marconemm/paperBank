@@ -1,8 +1,11 @@
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
+
+//Modules:
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -43,7 +46,9 @@ import { LoadingComponent } from './components/loading/loading.component';
       timeOut: 5000,
     }), // ToastrModule added
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }, //provide the loading interceptor
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
