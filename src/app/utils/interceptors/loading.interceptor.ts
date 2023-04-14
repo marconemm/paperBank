@@ -1,4 +1,3 @@
-import { LoadingService } from './../services/loading.service';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -11,9 +10,12 @@ import {
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 
+//Services:
+import { LoadingService } from 'src/app/core/services/loading.service';
+
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
-  constructor(private loadingService: LoadingService) {}
+  constructor(private loadingService: LoadingService) { }
 
   intercept(
     request: HttpRequest<unknown>,

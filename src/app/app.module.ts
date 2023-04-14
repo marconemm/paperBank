@@ -1,4 +1,4 @@
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
+// import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 //Modules:
 import { NgModule } from '@angular/core';
@@ -9,18 +9,19 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+//Pipes:
+import { DateTimePipe } from './core/pipes/date-time.pipe';
+import { DecimalsPipe } from './core/pipes/decimals.pipe';
+
 //Components:
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { BalancesComponent } from './components/balances/balances.component';
-import { ContatoComponent } from './components/contato/contato.component';
-
-//Pipes:
-import { DateTimePipe } from './pipes/date-time.pipe';
-import { DecimalsPipe } from './pipes/decimals.pipe';
-import { LoadingComponent } from './components/loading/loading.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { HomeComponent } from './modules/home/home.component';
+import { BalancesComponent } from './modules/balances/balances.component';
+import { ContatoComponent } from './modules/contact/contact.component';
+import { LoadingComponent } from './core/components/loading/loading.component';
+import { LoadingInterceptor } from './utils/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [

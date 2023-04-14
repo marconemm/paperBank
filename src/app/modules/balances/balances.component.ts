@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Constants } from 'src/app/enums/constants';
+import { Constants } from 'src/app/utils/enums/constants';
 import { take } from 'rxjs';
 import {
   IconDefinition,
@@ -9,12 +9,12 @@ import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { faReceipt } from '@fortawesome/free-solid-svg-icons';
 
 //Services:
-import { CoingeckoService } from 'src/app/services/coingecko.service';
-import { JeriSchoolService } from 'src/app/services/jeri-school.service';
 import { ToastrService } from 'ngx-toastr';
 import { HttpErrorResponse } from '@angular/common/http';
-import { LoadingService } from 'src/app/services/loading.service';
-import { Card } from 'src/app/models/card';
+import { Card } from 'src/app/core/models/card';
+import { CoingeckoService } from 'src/app/core/services/coingecko.service';
+import { JeriSchoolService } from 'src/app/core/services/jeri-school.service';
+import { LoadingService } from 'src/app/core/services/loading.service';
 
 @Component({
   selector: 'app-balances',

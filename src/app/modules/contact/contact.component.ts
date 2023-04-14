@@ -6,8 +6,8 @@ import {
 
 @Component({
   selector: 'app-contato',
-  templateUrl: './contato.component.html',
-  styleUrls: ['./contato.component.scss'],
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContatoComponent {
   contactIcon: IconDefinition;

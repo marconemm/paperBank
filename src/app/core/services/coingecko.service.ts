@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { API_BASE_URL } from '../environments/environment';
 import { Observable } from 'rxjs';
 import { BtcBrl } from '../models/btc-brl';
+import { API_BASE_URL } from 'src/app/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoingeckoService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   getBTC_BRL(): Observable<BtcBrl> {
     const endPoint = '/simple/price';

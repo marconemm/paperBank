@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { BalancesComponent } from './components/balances/balances.component';
-import { ContatoComponent } from './components/contato/contato.component';
+
+//Components:
+import { HomeComponent } from './modules/home/home.component';
+import { BalancesComponent } from './modules/balances/balances.component';
+import { ContatoComponent } from './modules/contact/contact.component';
 
 const routes: Routes = [
   {
