@@ -30,6 +30,7 @@
               "src/app/core/assets"
             ],
             "styles": [
+              "src/app/core/styles/reset.scss",
               "src/app/core/styles/styles.scss"
             ],
             "scripts": []

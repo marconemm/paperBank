@@ -1,4 +1,4 @@
-export enum Etheme {
+export enum ETheme {
   THEME_TEXT_DARK = 'Escuro',
-  THEME_TEXT_LIGTH = 'Claro',
+  THEME_TEXT_LIGHT = 'Claro',
 }

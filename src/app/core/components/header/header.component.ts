@@ -1,25 +1,34 @@
-import { Etheme } from 'src/app/core/utils/enums/etheme';
-import { Component } from '@angular/core';
+import { ETheme } from 'src/app/core/utils/enums/etheme';
+import { Component, AfterViewInit } from '@angular/core';
 import {
   IconDefinition,
   faMoon,
   faSun,
   faBars,
 } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   themeText: string;
   themeIcon: IconDefinition;
   menuIcon: IconDefinition;
 
   constructor() {
-    this.themeText = Etheme.THEME_TEXT_DARK;
+    this.themeText = ETheme.THEME_TEXT_DARK;
     this.themeIcon = faMoon;
     this.menuIcon = faBars;
+  }
+
+  ngAfterViewInit(): void {
+    const currentPath = window.location.pathname;
+    const aEl = document.querySelector(`a[href="${currentPath}"]`)
+
+    this.clearActiveMenu();
+    aEl?.classList.add('active');
   }
 
   openMenu() {
@@ -34,13 +43,9 @@ export class HeaderComponent {
   }
 
   activate(event: MouseEvent) {
-    const aElList = document.querySelectorAll('menu > ul > li > a');
     const target = <HTMLElement>event.target;
 
-    aElList.forEach((el) => {
-      el.removeAttribute('class');
-    });
-
+    this.clearActiveMenu()
     target.classList.add('active');
   }
 
@@ -48,11 +53,17 @@ export class HeaderComponent {
     const isDark = document.body.classList.toggle('dark-theme');
 
     if (isDark) {
-      this.themeText = Etheme.THEME_TEXT_LIGTH;
+      this.themeText = ETheme.THEME_TEXT_LIGHT;
       this.themeIcon = faSun;
     } else {
-      this.themeText = Etheme.THEME_TEXT_DARK;
+      this.themeText = ETheme.THEME_TEXT_DARK;
       this.themeIcon = faMoon;
     }
+  }
+
+  private clearActiveMenu() {
+    const aElList = document.querySelectorAll('menu > ul > li > a');
+
+    aElList.forEach((el) => el.removeAttribute('class'));
   }
 }
