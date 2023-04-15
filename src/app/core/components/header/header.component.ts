@@ -1,4 +1,4 @@
-import { Etheme } from 'src/app/utils/enums/etheme';
+import { Etheme } from 'src/app/core/utils/enums/etheme';
 import { Component } from '@angular/core';
 import {
   IconDefinition,

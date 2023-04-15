@@ -1,30 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//Components:
-import { HomeComponent } from './modules/home/home.component';
-import { BalancesComponent } from './modules/balances/balances.component';
-import { ContatoComponent } from './modules/contact/contact.component';
-
 const routes: Routes = [
+
   {
     path: '',
-    component: HomeComponent,
+    loadChildren: () => import('./core/modules/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'extratos',
-    component: BalancesComponent,
+    loadChildren: () => import('./core/modules/balances/balances.module').then(m => m.BalancesModule)
   },
   {
     path: 'contato',
-    component: ContatoComponent,
+    loadChildren: () => import('./core/modules/contact/contact.module').then(m => m.ContactModule)
   },
-  { path: '', redirectTo: '', pathMatch: 'full' },
-  { path: '**', redirectTo: '' },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

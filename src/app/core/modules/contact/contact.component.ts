@@ -9,7 +9,7 @@ import {
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContatoComponent {
+export class ContactComponent {
   contactIcon: IconDefinition;
 
   constructor() {

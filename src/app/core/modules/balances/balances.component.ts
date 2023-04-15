@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Constants } from 'src/app/utils/enums/constants';
+import { Constants } from 'src/app/core/utils/enums/constants';
 import { take } from 'rxjs';
 import {
   IconDefinition,
@@ -25,7 +25,7 @@ export class BalancesComponent implements OnInit {
   card: Card;
   cardIcon: IconDefinition;
   btcIcon: IconDefinition;
-  reciptIcon: IconDefinition;
+  receiptIcon: IconDefinition;
   isLoading: boolean;
 
   constructor(
@@ -37,7 +37,7 @@ export class BalancesComponent implements OnInit {
     this.isLoading = true;
     this.cardIcon = faCreditCard;
     this.btcIcon = faBitcoin;
-    this.reciptIcon = faReceipt;
+    this.receiptIcon = faReceipt;
     this.card = this.setCardInfo();
   }
 
